@@ -23,7 +23,7 @@ async def start(c, m, cb=False):
         send_msg = await m.reply_text("**Processing...**", quote=True)
 
     owner = await c.get_users(int(OWNER_ID))
-    owner_username = owner.username if owner.username else 'EE_MOVIES'
+    owner_username = owner.username if owner.username else 'Ns_bot_updates'
 
     # start text
     text = f"""Hey! {m.from_user.mention(style='md')}
@@ -39,11 +39,11 @@ async def start(c, m, cb=False):
     # Buttons
     buttons = [
         [
-            InlineKeyboardButton('My Father 👨‍✈️', url=f"https://t.me/EE_MOVIES"),
-            InlineKeyboardButton('Help 💡', callback_data="help")
+            InlineKeyboardButton('ಸೃಷ್ಟಿಕರ್ತ', url=f"https://t.me/{owner_username}"),
+            InlineKeyboardButton('ಸಹಾಯ?💡', callback_data="help")
         ],
         [
-            InlineKeyboardButton('About 📕', callback_data="about")
+            InlineKeyboardButton('ನನ್ನ ಕುರಿತು📕', callback_data="about")
         ]
     ]
 
