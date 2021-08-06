@@ -32,11 +32,11 @@ async def help_cb(c, m):
     # creating buttons
     buttons = [
         [
-            InlineKeyboardButton('Home 🏕', callback_data='home'),
-            InlineKeyboardButton('About 📕', callback_data='about')
+            InlineKeyboardButton('ಮುಖಪುಟ 📕', callback_data='home'),
+            InlineKeyboardButton('ನಮ್ಮ ಕುರಿತು 🙂', callback_data='about')
         ],
         [
-            InlineKeyboardButton('Close 🔐', callback_data='close')
+            InlineKeyboardButton('ಸಾಕು ನಿಲ್ಲಿಸು ✋', callback_data='close')
         ]
     ]
 
@@ -60,31 +60,31 @@ async def about_cb(c, m):
     bot = await c.get_me()
 
     # about text
-    about_text = f"""--**My Details:**--
+    about_text = f"""--**ನಮ್ಮ ಬಗ್ಗೆ:**--
 
-🤖 𝐌𝐲 𝐍𝐚𝐦𝐞: {bot.mention(style='md')}
+🤖 ನನ್ನ ಹೆಸರು: {bot.mention(style='md')}
     
-📝 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞: [Python 3](https://www.python.org/)
+📝 ಭಾಷೆ: [Python 3](https://www.python.org/)
 
-🧰 𝐅𝐫𝐚𝐦𝐞𝐰𝐨𝐫𝐤: [Pyrogram](https://github.com/pyrogram/pyrogram)
+🧰ಫ್ರೇಮ್-ವರ್ಕ್: [Pyrogram](https://github.com/pyrogram/pyrogram)
 
-👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫: {owner.mention(style='md')}
+👨‍💻 ಸೃಷ್ಟಿಕರ್ತ: {owner.mention(style='md')}
 
-📢 𝐂𝐡𝐚𝐧𝐧𝐞𝐥: [NS BOT UPDATES](https://t.me/Ns_bot_updates)
+📢 ಚಾನೆಲ್ : [JOIN & GET UPDATED](https://t.me/EE_MOVIES)
 
-👥 𝐆𝐫𝐨𝐮𝐩: [Ns BOT SUPPORT](https://t.me/Ns_Bot_supporters)
+👥ನಮ್ಮ ಗುಂಪು ಸೇರಿ: [JOIN & SUPPORT](https://t.me/joinchat/SJJZlM6WzKNlYWM1)
 
-🌐𝐒𝐨𝐮𝐫𝐜𝐞 𝐂𝐨𝐝𝐞: [Press Me 🥰](https://github.com/Ns-Bots/TG-File-Store)
+🌐𝐒𝐨𝐮𝐫𝐜𝐞 𝐂𝐨𝐝𝐞: [Press Me 🥰](https://telegra.ph/file/260e59d1948a46d26177f.jpg)
 """
 
     # creating buttons
     buttons = [
         [
-            InlineKeyboardButton('Home 🏕', callback_data='home'),
-            InlineKeyboardButton('Help 💡', callback_data='help')
+            InlineKeyboardButton('ಮುಖಪುಟ 📕', callback_data='home'),
+            InlineKeyboardButton('ಸಹಾಯ?💡', callback_data='help')
         ],
         [
-            InlineKeyboardButton('Close 🔐', callback_data='close')
+            InlineKeyboardButton('ಸಾಕು ನಿಲ್ಲಿಸು ✋', callback_data='close')
         ]
     ]
 
