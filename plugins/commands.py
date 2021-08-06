@@ -28,12 +28,12 @@ async def start(c, m, cb=False):
     # start text
     text = f"""Hey! {m.from_user.mention(style='md')}
 
-💡 ** I am Telegram File Store Bot**
+💡 ** ನಾನು ಫೈಲ್ ಗಳನ್ನು ಶೇರ್ ಮಾಡುವ ಬೊಟ್**
 
-`You can store your Telegram Media for permanent Link!`
+`@EE_MOVIESಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತೇನೆ!`
 
 
-**👲 Maintained By:** {owner.mention(style='md')}
+**👲 ಕಾರ್ಯನಿರ್ವಹಕ:** {owner.mention(style='md')}
 """
 
     # Buttons
