@@ -30,7 +30,7 @@ async def start(c, m, cb=False):
 
 💡 ** ನಾನು ಫೈಲ್ ಗಳನ್ನು ಶೇರ್ ಮಾಡುವ ಬೊಟ್**
 
-`@EE_MOVIESಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತೇನೆ!`
+`https;/t.meEE_MOVIES ಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತೇನೆ!`
 
 
 **👲 ಕಾರ್ಯನಿರ್ವಹಕ:** {owner.mention(style='md')}
@@ -67,15 +67,14 @@ async def start(c, m, cb=False):
 
             if string.empty:
                 owner = await c.get_users(int(OWNER_ID))
-                return await m.reply_text(f"🥴 Sorry bro your file was deleted by file owner or bot owner\n\nFor more help contact my owner 👉 {owner.mention(style='md')}")
+                return await m.reply_text(f"🥴 ಫೈಲ್ ಎಲ್ಲಾ ಹರ ಹರ...\nನಿನಗೆ ಕೊಟ್ಟಿದ್ದ ಸಮಯ ಮುಗಿದಿದೆ.\n\nಮಾಹಿತಿಗಾಗಿ ನನ್ನ ಗುರುವನ್ನು ಸಂಪರ್ಕಿಸಿ👉 {owner.mention(style='md')}")
             message_ids = (await decode(string.text)).split('-')
             for msg_id in message_ids:
                 msg = await c.get_messages(int(chat_id), int(msg_id)) if not DB_CHANNEL_ID else await c.get_messages(int(DB_CHANNEL_ID), int(msg_id))
 
                 if msg.empty:
                     owner = await c.get_users(int(OWNER_ID))
-                    return await m.reply_text(f"🥴 Sorry bro your file was deleted by file owner or bot owner\n\nFor more help contact my owner 👉 {owner.mention(style='md')}")
-
+                    return await m.reply_text(f"ಫೈಲ್ ಎಲ್ಲಾ ಹರ ಹರ...\nನಿನಗೆ ಕೊಟ್ಟಿದ್ದ ಸಮಯ ಮುಗಿದಿದೆ.\n\nಮಾಹಿತಿಗಾಗಿ ನನ್ನ ಗುರುವನ್ನು ಸಂಪರ್ಕಿಸಿ👉{owner.mention(style='m
                 await msg.copy(m.from_user.id)
                 await asyncio.sleep(1)
             return
@@ -84,7 +83,7 @@ async def start(c, m, cb=False):
         msg = await c.get_messages(int(chat_id), int(msg_id)) if not DB_CHANNEL_ID else await c.get_messages(int(DB_CHANNEL_ID), int(msg_id))
 
         if msg.empty:
-            return await send_msg.edit(f"🥴 Sorry bro your file was deleted by file owner or bot owner\n\nFor more help contact my owner 👉 {owner.mention(style='md')}")
+            return await send_msg(f"ಫೈಲ್ ಎಲ್ಲಾ ಹರ ಹರ...\nನಿನಗೆ ಕೊಟ್ಟಿದ್ದ ಸಮಯ ಮುಗಿದಿದೆ.\n\nಮಾಹಿತಿಗಾಗಿ ನನ್ನ ಗುರುವನ್ನು ಸಂಪರ್ಕಿಸಿ 👉 {owner.mention(style='md')}")
         
         caption = f"{msg.caption.markdown}\n\n\n" if msg.caption else ""
         as_uploadername = (await get_data(str(chat_id))).up_name
