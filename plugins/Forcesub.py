@@ -15,14 +15,14 @@ async def forcesub(c, m):
                await m.reply_text("**Hey you are banned 😜**", quote=True)
                return
         except UserNotParticipant:
-            buttons = [[InlineKeyboardButton(text='Updates Channel 🔖', url=f"https://t.me/{UPDATE_CHANNEL}")]]
+            buttons = [[InlineKeyboardButton(text='ಅಪ್ಡೇಟ್ ಚಾನೆಲ್ 🔖', url=f"https://t.me/{UPDATE_CHANNEL}")]]
             if m.text:
                 if (len(m.text.split(' ')) > 1) & ('start' in m.text):
                     chat_id, msg_id = m.text.split(' ')[1].split('_')
-                    buttons.append([InlineKeyboardButton('🔄 Refresh', callback_data=f'refresh+{chat_id}+{msg_id}')])
+                    buttons.append([InlineKeyboardButton('🔄 ಮರು ಪ್ರಯತ್ನಿಸು', callback_data=f'refresh+{chat_id}+{msg_id}')])
             await m.reply_text(
-                f"Hey {m.from_user.mention(style='md')} you need join My updates channel in order to use me 😉\n\n"
-                "__Press the Following Button to join Now 👇__",
+                f"Hey {m.from_user.mention(style='md')} ನನ್ನನ್ನು ಉಪಯೋಗಿಸಬೇಕೆಂದರೆ ,ನಮ್ಮ ಅಪ್ಡೇಟ್ ಚಾನೆಲ್ ಸೇರಿರಬೇಕು 😉\n\n"
+                "__ಕೆಳಗೆ ಕಾಣುವ ಬಟನ್ ಒತ್ತಿ ಜಾಯ್ನ್ ಆಗು 👇__",
                 reply_markup=InlineKeyboardMarkup(buttons),
                 quote=True
             )
@@ -47,7 +47,7 @@ async def refresh_cb(c, m):
                    pass
                return
         except UserNotParticipant:
-            await m.answer('You are not yet joined our channel. First join and then press refresh button 🤤', show_alert=True)
+            await m.answer('ನನ್ನನ್ನು ಉಪಯೋಗಿಸಬೇಕೆಂದರೆ ,ನಮ್ಮ ಅಪ್ಡೇಟ್ ಚಾನೆಲ್ ಸೇರಿರಬೇಕು . ಮೊದಲು ಜಾಯ್ನ್ ಆಗು ನಂತರ ಮರುಪ್ರಯತ್ನಿಸ😁', show_alert=True)
             return
         except Exception as e:
             print(e)
@@ -57,7 +57,7 @@ async def refresh_cb(c, m):
     cmd, chat_id, msg_id = m.data.split("+")
     msg = await c.get_messages(int(chat_id), int(msg_id)) if not DB_CHANNEL_ID else await c.get_messages(int(DB_CHANNEL_ID), int(msg_id))
     if msg.empty:
-        return await m.reply_text(f"🥴 Sorry bro your file was missing\n\nPlease contact my owner 👉 {owner.mention(style='md')}")
+        return await m.reply_text(f"🥴 ಕ್ಷಮಿಸು ಫೈಲ್ ಕಾಣುತ್ತಿಲ್ಲ\n\nನನ್ನ ಗುರುವನ್ನು ಸಂಪರ್ಕಿಸಿ 👉 {owner.mention(style='md')}")
 
     caption = msg.caption.markdown
     as_uploadername = (await get_data(str(chat_id))).up_name
