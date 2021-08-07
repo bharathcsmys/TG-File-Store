@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserNotParticipant
 from database.database import *
 from config import *
-
+from plugins.commands import decode 
 @Client.on_message(filters.private & filters.incoming)
 async def forcesub(c, m):
     owner = await c.get_users(int(OWNER_ID))
@@ -17,8 +17,9 @@ async def forcesub(c, m):
         except UserNotParticipant:
             buttons = [[InlineKeyboardButton(text='ಅಪ್ಡೇಟ್ ಚಾನೆಲ್ 🔖', url=f"https://t.me/{UPDATE_CHANNEL}")]]
             if m.text:
-                if (len(m.text.split(' ')) > 1) & ('start' in m.text):
-                    chat_id, msg_id = m.text.split(' ')[1].split('_')
+                                if (len(m.command) > 1) & ('start' in m.text):
+                    decoded_data = await decode(m.command[1])
+                    chat_id, msg_id = decoded_data.split('_')
                     buttons.append([InlineKeyboardButton('🔄 ಮರು ಪ್ರಯತ್ನಿಸು', callback_data=f'refresh+{chat_id}+{msg_id}')])
             await m.reply_text(
                 f"Hey {m.from_user.mention(style='md')} ನನ್ನನ್ನು ಉಪಯೋಗಿಸಬೇಕೆಂದರೆ ,ನಮ್ಮ ಅಪ್ಡೇಟ್ ಚಾನೆಲ್ ಸೇರಿರಬೇಕು 😉\n\n"
