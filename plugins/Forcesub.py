@@ -17,7 +17,7 @@ async def forcesub(c, m):
         except UserNotParticipant:
             buttons = [[InlineKeyboardButton(text='ಅಪ್ಡೇಟ್ ಚಾನೆಲ್ 🔖', url=f"https://t.me/{UPDATE_CHANNEL}")]]
             if m.text:
-                                if (len(m.command) > 1) & ('start' in m.text):
+               if (len(m.command) > 1) & ('start' in m.text):
                     decoded_data = await decode(m.command[1])
                     chat_id, msg_id = decoded_data.split('_')
                     buttons.append([InlineKeyboardButton('🔄 ಮರು ಪ್ರಯತ್ನಿಸು', callback_data=f'refresh+{chat_id}+{msg_id}')])
